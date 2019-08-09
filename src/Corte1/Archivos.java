@@ -22,6 +22,7 @@ import java.util.NoSuchElementException;
 public class Archivos {
 
     ArrayList Valores = new ArrayList();
+    FileWriter rutaNueva = null;
     String Vector[];
 
     public void ordenar(String dirArchivo) throws FileNotFoundException, IOException, NoSuchElementException {
@@ -29,14 +30,16 @@ public class Archivos {
         FileReader lector = new FileReader(dirArchivo);
         BufferedReader datos = new BufferedReader(lector);
         cadena = datos.readLine();
-
+        datos.close();
         //System.out.println(cadena.length());
         String n = "";
         for (int it = 0; it < cadena.length(); it++) {
 
             if (Character.compare(cadena.charAt(it), ',') != 0) {
                 n += "" + cadena.charAt(it);
-                continue;
+                if (it != cadena.length() - 1) {
+                    continue;
+                }
             }
 
             Valores.add(n);
@@ -44,39 +47,42 @@ public class Archivos {
             n = "";
         }
 
-        Iterator iterador = Valores.iterator();
+        //Iterator iterador = Valores.iterator();
         Vector = new String[Valores.size()];
         System.out.println(Vector.length + " " + Valores.size());
-        int i = 0;
-//        while (iterador.hasNext()) {
-//            System.out.print(iterador.next() + " ");
-//        }
-
+        int x = 0;
         for (Object nombre : Valores) {
             System.out.println(nombre.toString());
-            Vector[i] = nombre.toString();
-            i++;
+            Vector[x] = nombre.toString();
+            x++;
         }
 
-        Burbuja(Vector);
-    }
+        rutaNueva = new FileWriter("./src/Texto/hola2.txt");
+        Vector = Burbuja(Vector);
+        
+        for (int i = 0; i < Vector.length; i++) {
+                rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);
+                
+                
+            }
+            rutaNueva.close();
+    }   
 
     public String[] Burbuja(String[] Vector) {
 
-        for (int i = 0, j = 0; i < Vector.length - 1 && j < Vector.length - 1; i++) {
-            if (Integer.parseInt(Vector[i]) > Integer.parseInt(Vector[i + 1])) {
-                String aux = Vector[i];
-                Vector[i] = Vector[i + 1];
-                Vector[i + 1] = aux;
-            }
-            if (i == Vector.length - 1) {
-                j++;
-                i = 0;
+        for (int i = 0; i < Vector.length ; i++) {
+            for (int j = 0; j < Vector.length - 1; j++) {
+                 if(Integer.parseInt(Vector[j]) > Integer.parseInt(Vector[j+1])){
+                     String aux=Vector[j];
+                     Vector[j]= Vector[j+1];
+                     Vector[j+1] = aux;
+                 }   
             }
         }
-        for (String valor : Vector) {
-            System.out.print(" " + valor);
-        }
+
+//        for (String valor : Vector) {
+//            System.out.print(" " + valor);
+//        }
         return Vector;
     }
 }
