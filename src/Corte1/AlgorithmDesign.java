@@ -17,19 +17,18 @@ public class AlgorithmDesign {
     public static void main(String[] args) {
         //Ctrl + shift + c para comentar fast
         
-//        //Potencia
-//        RecursPotenciaBN Potencia = new RecursPotenciaBN();
-//        System.out.println(Potencia.Potencia(2, 10));
-//
-//        
-//        //Fibonacci
-//        RecursFibon Fib = new RecursFibon();
-//        Fib.Fibo(0,1);
-//
-//        
-//        //Factorial de un numero
-//        RecursFactorial Factorial = new RecursFactorial();
-//        System.out.println(Factorial.Factorial(6));
+        //Potencia
+        Recursividad R = new Recursividad();
+        System.out.println(R.Potencia(2, 10));
+
+        
+        //Fibonacci
+
+        R.Fibo(0,1);
+
+        
+        //Factorial de un numero
+        System.out.println(R.Factorial(6));
     }
 
 }
