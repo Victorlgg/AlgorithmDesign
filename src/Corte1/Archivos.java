@@ -54,7 +54,7 @@ public class Archivos {
         System.out.println(Vector.length + " " + Valores.size());
         int x = 0;
         for (Object nombre : Valores) {
-            System.out.println(nombre.toString());
+            System.out.print( x%50==0 ? nombre.toString()+"\n": nombre.toString()+", ");
             Vector[x] = nombre.toString();
             x++;
         }
