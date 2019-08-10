@@ -34,7 +34,9 @@ public class Archivos {
         //System.out.println(cadena.length());
         String n = "";
         for (int it = 0; it < cadena.length(); it++) {
-
+            if(Character.compare(cadena.charAt(it), ' ')==0){
+                continue;
+            }
             if (Character.compare(cadena.charAt(it), ',') != 0) {
                 n += "" + cadena.charAt(it);
                 if (it != cadena.length() - 1) {
