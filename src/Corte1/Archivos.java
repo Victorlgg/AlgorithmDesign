@@ -6,7 +6,7 @@
 package Corte1;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+//import java.util.Iterator;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -30,41 +30,46 @@ public class Archivos {
         FileReader lector = new FileReader(dirArchivo);
         BufferedReader datos = new BufferedReader(lector);
         cadena = datos.readLine();
+        
         datos.close();
         //System.out.println(cadena.length());
         String n = "";
-        for (int it = 0; it < cadena.length(); it++) {
-            if(Character.compare(cadena.charAt(it), ' ')==0){
-                continue;
-            }
-            if (Character.compare(cadena.charAt(it), ',') != 0) {
-                n += "" + cadena.charAt(it);
-                if (it != cadena.length() - 1) {
-                    continue;
-                }
-            }
-
-            Valores.add(n);
-
-            n = "";
+        // String split
+        
+        String Vectorr[] = cadena.split(", ",-2);
+        
+        for(String datoss: Vectorr){
+            //System.out.println(datoss);
         }
+//        for (int it = 0; it < cadena.length(); it++) {
+//            if(Character.compare(cadena.charAt(it), ' ')==0){
+//                continue;
+//            }
+//            if (Character.compare(cadena.charAt(it), ',') != 0) {
+//                n += "" + cadena.charAt(it);
+//                if (it != cadena.length() - 1) {
+//                    continue;
+//                }
+//            }
+//            Valores.add(n);
+//            n = "";
+//        }
 
         //Iterator iterador = Valores.iterator();
         Vector = new String[Valores.size()];
-        System.out.println(Vector.length + " " + Valores.size());
-        int x = 0;
-        for (Object nombre : Valores) {
-            System.out.print( x%50==0 ? nombre.toString()+"\n": nombre.toString()+", ");
-            Vector[x] = nombre.toString();
-            x++;
-        }
+//        System.out.println(Vector.length + " " + Valores.size());
+        //int x = 0;
+//        for (Object nombre : Valores) {
+//            //System.out.print( x%50==0 ? nombre.toString()+"\n": nombre.toString()+", ");
+//            Vector[x] = nombre.toString();
+//            x++;
+//        }
 
         rutaNueva = new FileWriter("./src/Texto/hola2.txt");
-        Vector = Burbuja(Vector);
+        Vector = Burbuja(Vectorr);
         
         for (int i = 0; i < Vector.length; i++) {
                 rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);
-                
                 
             }
             rutaNueva.close();
