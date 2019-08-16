@@ -5,6 +5,7 @@
  */
 package Corte1;
 
+import AlgorOrdenamiento.*;
 import java.util.ArrayList;
 //import java.util.Iterator;
 
@@ -22,74 +23,93 @@ import java.util.NoSuchElementException;
 public class Archivos {
 
     ArrayList Valores = new ArrayList();
-    FileWriter rutaNueva = null;
-    String Vector[];
+    //FileWriter rutaNueva = null;
+    //String Vector[];
 
     public void ordenar(String dirArchivo) throws FileNotFoundException, IOException, NoSuchElementException {
-        String cadena;
+        QuickSort S = new QuickSort();
+        MergeSort M = new MergeSort();
+        //String cadena;
         FileReader lector = new FileReader(dirArchivo);
         BufferedReader datos = new BufferedReader(lector);
-        cadena = datos.readLine();
-        
+        String cadena = datos.readLine();
+
         datos.close();
-        //System.out.println(cadena.length());
+        lector.close();
         String n = "";
-        // String split
-        
-        String Vectorr[] = cadena.split(", ",-2);
-        
-        for(String datoss: Vectorr){
-            //System.out.println(datoss);
-        }
-//        for (int it = 0; it < cadena.length(); it++) {
-//            if(Character.compare(cadena.charAt(it), ' ')==0){
-//                continue;
-//            }
-//            if (Character.compare(cadena.charAt(it), ',') != 0) {
-//                n += "" + cadena.charAt(it);
-//                if (it != cadena.length() - 1) {
-//                    continue;
-//                }
-//            }
-//            Valores.add(n);
-//            n = "";
-//        }
 
-        //Iterator iterador = Valores.iterator();
-        Vector = new String[Valores.size()];
-//        System.out.println(Vector.length + " " + Valores.size());
-        //int x = 0;
-//        for (Object nombre : Valores) {
-//            //System.out.print( x%50==0 ? nombre.toString()+"\n": nombre.toString()+", ");
-//            Vector[x] = nombre.toString();
-//            x++;
-//        }
+        String Vectorr[] = cadena.split(", ");
 
-        rutaNueva = new FileWriter("./src/Texto/hola2.txt");
-        Vector = Burbuja(Vectorr);
-        
+//        Bubblesort
+        long startTime = System.nanoTime();
+        String[] Vector = Burbuja(Vectorr);
+        long endTime = System.nanoTime() - startTime;
+        System.out.println("Bubble: " + endTime / (Math.pow(1, -6)));
+
         for (int i = 0; i < Vector.length; i++) {
-                rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);
-                
+            if (i != Vector.length - 1) {
+                n += Vector[i] + ",";
+            } else {
+                n += Vector[i];
             }
-            rutaNueva.close();
-    }   
+            //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
+        }
+        FileWriter rutaNueva = new FileWriter("./src/Texto/Burbuja.txt");
+        rutaNueva.append(n);
+
+//        Quicksort
+        startTime = System.nanoTime();
+        int[] V = S.QuickSort(Vectorr);
+        endTime = System.nanoTime() - startTime;
+        System.out.println("Quick: " + endTime / (Math.pow(1, -6)));
+
+        n = "";
+        for (int i = 0; i < V.length; i++) {
+            
+            if (i != V.length - 1) {
+                n += V[i] + ",";
+            } else {
+                n += V[i];
+            }
+            //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
+        }
+
+        rutaNueva = new FileWriter("./src/Texto/Quick.txt");
+        rutaNueva.append(n);
+
+        //Mergesort    
+        startTime = System.nanoTime();
+        int[] Merged = M.mergeSort(Vectorr, 0, Vectorr.length - 1);
+        endTime = System.nanoTime() - startTime;
+        System.out.println("Merge: " + endTime / (Math.pow(1, -6)));
+
+        n = "";
+        for (int i = 0; i < Merged.length; i++) {
+            if (i != Merged.length - 1) {
+                n += Merged[i] + ",";
+            } else {
+                n += Merged[i];
+            }
+            //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
+        }
+        rutaNueva = new FileWriter("./src/Texto/Merge.txt");
+        rutaNueva.append(n);
+        rutaNueva.close();
+
+    }
 
     public String[] Burbuja(String[] Vector) {
 
-        for (int i = 0; i < Vector.length ; i++) {
+        for (int i = 0; i < Vector.length-1; i++) {
             for (int j = 0; j < Vector.length - 1; j++) {
-                 if(Integer.parseInt(Vector[j]) > Integer.parseInt(Vector[j+1])){
-                     String aux=Vector[j];
-                     Vector[j]= Vector[j+1];
-                     Vector[j+1] = aux;
-                 }   
+                if (Integer.parseInt(Vector[j]) > Integer.parseInt(Vector[j + 1])) {
+                    String aux = Vector[j];
+                    Vector[j] = Vector[j + 1];
+                    Vector[j + 1] = aux;
+                }
             }
         }
-
-//        for (String valor : Vector) {
-//            System.out.print(" " + valor);
-//        }
         return Vector;
     }
+
 }
