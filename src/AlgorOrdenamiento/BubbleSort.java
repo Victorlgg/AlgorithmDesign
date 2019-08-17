@@ -11,24 +11,19 @@ package AlgorOrdenamiento;
  */
 public class BubbleSort {
     
-    public int[] Burbuja(String[] Vector) {
-        int[] enteros= new int[Vector.length];
-        int x=0;
-        for(String valor : Vector){
-            enteros[x]= Integer.parseInt(valor);
-            x++;
-        }
+    public int[] Burbuja(int[] Vector) {
         
-        for (int i = 0; i < enteros.length; i++) {
-            for (int j = 0; j < enteros.length - 1; j++) {
-                if ( enteros[j] > enteros[j + 1]) {
-                    int aux = enteros[j];
-                    enteros[j] = enteros[j + 1];
-                    enteros[j + 1] = aux;
+           
+        for (int i = 0; i < Vector.length; i++) {
+            for (int j = 0; j < Vector.length - 1; j++) {
+                if ( Vector[j] > Vector[j + 1]) {
+                    int aux = Vector[j];
+                    Vector[j] = Vector[j + 1];
+                    Vector[j + 1] = aux;
                 }
             }
         }
-        return enteros;
+        return Vector;
     }
     
 }
