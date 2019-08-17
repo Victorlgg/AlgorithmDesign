@@ -27,15 +27,10 @@ import java.util.Random;
 public class QuickSort {
     
         //QuickSort debe ser recursivo
-    public int[] QuickSort(String[] Vector) {
-        int[] enteros= new int[Vector.length];
-        int i=0;
-        for(String valor : Vector){
-            enteros[i]= Integer.parseInt(valor);
-            i++;
-        }
-        quickSort(enteros, 0,Vector.length-1);
-        return enteros;
+    public int[] QuickSort(int[] Vector) {
+        
+        quickSort(Vector, 0,Vector.length-1);
+        return Vector;
     }
     
     private void quickSort(int[]Vector, int low, int high){

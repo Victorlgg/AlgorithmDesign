@@ -34,7 +34,7 @@ public class AlgorithmDesign {
         //escribirlo ordenado en otro archivo
         
         Archivos Arc = new Archivos();
-        Arc.ordenar("./src/Texto/hola.txt");
+        Arc.ordenar("./src/Texto/hola.txt",1);
     }
 
 }

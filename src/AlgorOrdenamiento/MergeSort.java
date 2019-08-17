@@ -17,21 +17,16 @@ public class MergeSort {
     //each list sorted si llega a 1
     //Divide and conquer
     //Log n merge steps O(n log n)
-    public int[] mergeSort(String[] Vector, int Inicio, int Final) {
-        int[] enteros= new int[Vector.length];
-        int i=0;
-        for(String valor : Vector){
-            enteros[i]= Integer.parseInt(valor);
-            i++;
-        }
+    public int[] mergeSort(int[] Vector, int Inicio, int Final) {
+
         if (Inicio < Final) {
             int m = (Inicio + Final) / 2;
             mergeSort(Vector, Inicio, m);
             mergeSort(Vector, m + 1, Final);
-            mezclar(enteros, Inicio, m, Final);
+            mezclar(Vector, Inicio, m, Final);
         }
 
-        return enteros;
+        return Vector;
     }
 
     public static void mezclar(int A[], int izq, int m, int der) {
