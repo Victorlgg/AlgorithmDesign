@@ -64,9 +64,9 @@ public class Archivos {
 //                    }
 //                    //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
 //                }
-                rutaNueva = new FileWriter("./src/Texto/Burbuja.txt");
-                //rutaNueva.append(n);
-                rutaNueva.close();
+//                rutaNueva = new FileWriter("./src/Texto/Burbuja.txt");
+//                //rutaNueva.append(n);
+//                rutaNueva.close();
                 break;
 
             case 2:
@@ -93,9 +93,9 @@ public class Archivos {
 //                    //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
 //                }
 
-                rutaNueva = new FileWriter("./src/Texto/Quick.txt");
-                //rutaNueva.append(n);
-                rutaNueva.close();
+//                rutaNueva = new FileWriter("./src/Texto/Quick.txt");
+//                //rutaNueva.append(n);
+//                rutaNueva.close();
                 break;
 
             case 3:
@@ -120,9 +120,9 @@ public class Archivos {
 //                    }
                     //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
 //                }
-                rutaNueva = new FileWriter("./src/Texto/Merge.txt");
+                //rutaNueva = new FileWriter("./src/Texto/Merge.txt");
                 //rutaNueva.append(n);
-                rutaNueva.close();
+//                rutaNueva.close();
                 break;
         }
 

@@ -34,9 +34,25 @@ public class AlgorithmDesign {
         //escribirlo ordenado en otro archivo
         
         Archivos Arc = new Archivos();
+        System.out.println("Mil");
+        Arc.ordenar("./src/Texto/Mil.txt",1);
+        Arc.ordenar("./src/Texto/Mil.txt",2);
+        Arc.ordenar("./src/Texto/Mil.txt",3);
+        
+        System.out.println("Diez mil");
+        Arc.ordenar("./src/Texto/diezMil.txt",1);
+        Arc.ordenar("./src/Texto/diezMil.txt",2);
+        Arc.ordenar("./src/Texto/diezMil.txt",3);
+        
+        System.out.println("Cien mil");
         Arc.ordenar("./src/Texto/cienMil.txt",1);
         Arc.ordenar("./src/Texto/cienMil.txt",2);
         Arc.ordenar("./src/Texto/cienMil.txt",3);
+        
+        System.out.println("Millon");
+        Arc.ordenar("./src/Texto/Millon.txt",1);
+        Arc.ordenar("./src/Texto/Millon.txt",2);
+        Arc.ordenar("./src/Texto/Millon.txt",3);
         
     }
 
