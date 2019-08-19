@@ -13,9 +13,24 @@ import java.io.IOException;
  */
 public class AlgorithmDesign {
 
-    /**
-     * @param args the command line arguments
-     */
+//    public static void casas(){
+//        int casas=100;
+//        int suma1=0;
+//        int suma2=0;
+//        int posicion=0;
+//    for(int i=2;i<=casas;i++){
+//        posicion=i;
+//        suma1+=i;
+//        for(int j=i;j<=casas;j++){
+//            suma2+=j;
+//            if(suma2>suma1){
+//                break;
+//            }
+//        }
+//    }
+//    System.out.println(posicion);
+//    }
+    
     public static void main(String[] args) throws IOException {
         //Ctrl + shift + c para comentar fast
         
@@ -28,32 +43,63 @@ public class AlgorithmDesign {
 //        //Factorial de un numero
 //        System.out.println(R.Factorial(6));
         
+
+
+        
         //Taller 2
         //Leer en un archivo posiciones donde cada valor está separado por una coma
         //guardarlos en un array y ordenarlos por medio de bubblesort y 
         //escribirlo ordenado en otro archivo
         
+        //Tambien estan los algoritmos quick y mergesort
+        
+        
         Archivos Arc = new Archivos();
+        
+        System.out.println("1.Bubble 2.Quick, 3.Merge");
+
         System.out.println("Mil");
         Arc.ordenar("./src/Texto/Mil.txt",1);
         Arc.ordenar("./src/Texto/Mil.txt",2);
         Arc.ordenar("./src/Texto/Mil.txt",3);
+        
+        System.out.println("Cinco mil");
+        Arc.ordenar("./src/Texto/cincoMil.txt",1);
+        Arc.ordenar("./src/Texto/cincoMil.txt",2);
+        Arc.ordenar("./src/Texto/cincoMil.txt",3);
         
         System.out.println("Diez mil");
         Arc.ordenar("./src/Texto/diezMil.txt",1);
         Arc.ordenar("./src/Texto/diezMil.txt",2);
         Arc.ordenar("./src/Texto/diezMil.txt",3);
         
+        System.out.println("25 mil");
+        Arc.ordenar("./src/Texto/ventiCincoMil.txt",1);
+        Arc.ordenar("./src/Texto/ventiCincoMil.txt",2);
+        Arc.ordenar("./src/Texto/ventiCincoMil.txt",3);
+        
+        System.out.println("50 mil");
+        Arc.ordenar("./src/Texto/cincuentaMil.txt",1);
+        Arc.ordenar("./src/Texto/cincuentaMil.txt",2);
+        Arc.ordenar("./src/Texto/cincuentaMil.txt",3);
+        
+        System.out.println("75 mil");
+        Arc.ordenar("./src/Texto/setentaCincoMil.txt",1);
+        Arc.ordenar("./src/Texto/setentaCincoMil.txt",2);
+        Arc.ordenar("./src/Texto/setentaCincoMil.txt",3);
+        
         System.out.println("Cien mil");
         Arc.ordenar("./src/Texto/cienMil.txt",1);
         Arc.ordenar("./src/Texto/cienMil.txt",2);
         Arc.ordenar("./src/Texto/cienMil.txt",3);
         
-        System.out.println("Millon");
-        Arc.ordenar("./src/Texto/Millon.txt",1);
-        Arc.ordenar("./src/Texto/Millon.txt",2);
-        Arc.ordenar("./src/Texto/Millon.txt",3);
+//        System.out.println("Millon");
+//        Arc.ordenar("./src/Texto/Millon.txt",1);
+//        Arc.ordenar("./src/Texto/Millon.txt",2);
+//        Arc.ordenar("./src/Texto/Millon.txt",3);
         
+        //Casas
+//        casas();
     }
 
 }

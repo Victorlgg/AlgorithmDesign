@@ -7,7 +7,7 @@ package AlgorOrdenamiento;
 
 /**
  *
- * @author Victor
+ * @author http://puntocomnoesunlenguaje.blogspot.com/2014/10/java-mergesort.html
  */
 public class MergeSort {
     

@@ -54,7 +54,7 @@ public class Archivos {
                 startTime = System.nanoTime();
                 B = BS.Burbuja(B);
                 endTime = System.nanoTime() - startTime;
-                System.out.println("Bubble: " + endTime / (Math.pow(10, 6)) +" ms");
+                System.out.println("" + endTime / (Math.pow(10, 6)) +" ms");
 
 //                for (int i = 0; i < Vector.length; i++) {
 //                    if (i != Vector.length - 1) {
@@ -80,7 +80,7 @@ public class Archivos {
                 startTime = System.nanoTime();
                 V = S.QuickSort(V);
                 endTime = System.nanoTime() - startTime;
-                System.out.println("Quick: " + endTime / (Math.pow(10, 6))+" ms");
+                System.out.println("" + endTime / (Math.pow(10, 6))+" ms");
 
 //                n = "";
 //                for (int i = 0; i < V.length; i++) {
@@ -109,7 +109,7 @@ public class Archivos {
                 startTime = System.nanoTime();
                 Merged = M.mergeSort(Merged, 0, Merged.length - 1);
                 endTime = System.nanoTime() - startTime;
-                System.out.println("Merge: " + endTime / (Math.pow(10, 6)) +" ms");
+                System.out.println("" + endTime / (Math.pow(10, 6)) +" ms");
 
 //                n = "";
 //                for (int i = 0; i < Merged.length; i++) {
@@ -128,18 +128,5 @@ public class Archivos {
 
     }
 
-//    public String[] Burbuja(String[] Vector) {
-//
-//        for (int i = 0; i < Vector.length - 1; i++) {
-//            for (int j = 0; j < Vector.length - 1; j++) {
-//                if (Integer.parseInt(Vector[j]) > Integer.parseInt(Vector[j + 1])) {
-//                    String aux = Vector[j];
-//                    Vector[j] = Vector[j + 1];
-//                    Vector[j + 1] = aux;
-//                }
-//            }
-//        }
-//        return Vector;
-//    }
 
 }
