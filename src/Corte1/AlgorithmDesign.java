@@ -103,7 +103,8 @@ public class AlgorithmDesign {
         //Casas
 //        casas();
 
-//Analisis de gráficas en Latex
+//Analisis de gráficas en Latex, explicacion de los metodos
+
     }
 
 }
