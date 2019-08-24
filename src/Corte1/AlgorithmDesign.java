@@ -14,7 +14,7 @@ import java.io.IOException;
 public class AlgorithmDesign {
 
     public static void casas() {
-        int casas = 100;
+        int casas = 1000000;
         int suma1 = 0;
         int suma2 = 0;
         int posicion = 0;
@@ -24,7 +24,7 @@ public class AlgorithmDesign {
             suma2 = 0;
             //i-1 diferente resultado
             //6 y 35 vs 3 y 14
-            for (int x = i; x > 0; x--) {
+            for (int x = i-1; x > 0; x--) {
                 suma1 += x;
             }
             
@@ -37,8 +37,9 @@ public class AlgorithmDesign {
                     break;
                 }
             }
+            System.out.print(i%10000==0 ?posicion+"\n" :"");
         }
-        System.out.println(posicion);
+        
     }
 
     public static void main(String[] args) throws IOException {
@@ -61,21 +62,21 @@ public class AlgorithmDesign {
 
         System.out.println("1.Bubble 2.Quick, 3.Merge");
 
-        System.out.println("Mil");
-        Arc.ordenar("./src/Texto/Mil.txt", 1);
-        Arc.ordenar("./src/Texto/Mil.txt", 2);
-        Arc.ordenar("./src/Texto/Mil.txt", 3);
-
-        System.out.println("Cinco mil");
-        Arc.ordenar("./src/Texto/cincoMil.txt", 1);
-        Arc.ordenar("./src/Texto/cincoMil.txt", 2);
-        Arc.ordenar("./src/Texto/cincoMil.txt", 3);
-
+//        System.out.println("Mil");
+//        Arc.ordenar("./src/Texto/Mil.txt", 1);
+//        Arc.ordenar("./src/Texto/Mil.txt", 2);
+//        Arc.ordenar("./src/Texto/Mil.txt", 3);
+//
+//        System.out.println("Cinco mil");
+//        Arc.ordenar("./src/Texto/cincoMil.txt", 1);
+//        Arc.ordenar("./src/Texto/cincoMil.txt", 2);
+//        Arc.ordenar("./src/Texto/cincoMil.txt", 3);
+//
 //        System.out.println("Diez mil");
 //        Arc.ordenar("./src/Texto/diezMil.txt",1);
 //        Arc.ordenar("./src/Texto/diezMil.txt",2);
 //        Arc.ordenar("./src/Texto/diezMil.txt",3);
-//        
+////        
 //        System.out.println("25 mil");
 //        Arc.ordenar("./src/Texto/ventiCincoMil.txt",1);
 //        Arc.ordenar("./src/Texto/ventiCincoMil.txt",2);
@@ -96,11 +97,13 @@ public class AlgorithmDesign {
 //        Arc.ordenar("./src/Texto/cienMil.txt",2);
 //        Arc.ordenar("./src/Texto/cienMil.txt",3);
 //        System.out.println("Millon");
-//        Arc.ordenar("./src/Texto/Millon.txt",1);
-//        Arc.ordenar("./src/Texto/Millon.txt",2);
+////        Arc.ordenar("./src/Texto/Millon.txt",1);
+////        Arc.ordenar("./src/Texto/Millon.txt",2);
 //        Arc.ordenar("./src/Texto/Millon.txt",3);
         //Casas
-        casas();
+//        casas();
+
+//Analisis de gráficas en Latex
     }
 
 }
