@@ -124,6 +124,33 @@ public class Archivos {
                 //rutaNueva.append(n);
 //                rutaNueva.close();
                 break;
+                
+            case 4:
+                //Con ARCHIVOS
+                //        Bubblesort
+                int[] XX = new int[Vectorr.length];
+                int ss = 0;
+                for (String valor : Vectorr) {
+                    XX[ss] = Integer.parseInt(valor);
+                    ss++;
+                }
+                startTime = System.nanoTime();
+                XX = BS.Burbuja(XX);
+                endTime = System.nanoTime() - startTime;
+                System.out.println("" + endTime / (Math.pow(10, 6)) +" ms");
+
+                for (int i = 0; i < XX.length; i++) {
+                    if (i != XX.length - 1) {
+                        n += XX[i] + ", ";
+                    } else {
+                        n += XX[i];
+                    }
+                    //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
+                }
+                rutaNueva = new FileWriter("./src/Texto/BurbujaOrdenado5.txt");
+                rutaNueva.append(n);
+                rutaNueva.close();
+                break;
         }
 
     }
