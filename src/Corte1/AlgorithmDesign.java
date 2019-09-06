@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class AlgorithmDesign {
 
-    public static void casas() {
-        int casas = 1000000;
+    public static void casas(int size) {
+        int casas = size;
         int suma1 = 0;
         int suma2 = 0;
         int posicion = 0;
@@ -106,7 +106,8 @@ public class AlgorithmDesign {
                 break;
             case 3:
                 //Casas
-                casas();
+                int size = sc.nextInt();
+                casas(size);
                 break;
                
             case 4:
