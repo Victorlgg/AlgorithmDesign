@@ -49,8 +49,8 @@ public class AlgorithmDesign {
         System.out.println("1.Leer y ordenar archivo con burbuja"
                 + "\n2.Métodos de ordenamiento."
                 + "\n3.Sumar Casas"
-                + "\n4.Maximos y minimos Divide y vencerás"
-                + "\n5.Multiplicar matrices Divide y vencerás"
+                + "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
+                + "\n5.Multiplicar matrices Divide y vencerás" //Segundo Corte
         );
         int x = sc.nextInt();
 
@@ -111,11 +111,11 @@ public class AlgorithmDesign {
                 break;
                
             case 4:
-                //DYV Maximo y minimo lista ordenada
+                //DYV Maximo y minimo lista ordenada  -_> SEGUNDO CORTEEEAREQRA
                 break;
                 
             case 5: 
-                //DYV  Multiplicar matrices
+                //DYV  Multiplicar matrices  _--->SEGUNDO CORTEEEAREQRA
                 break;
         }
 
@@ -135,6 +135,8 @@ public class AlgorithmDesign {
         //escribirlo ordenado en otro archivo
         //Tambien estan los algoritmos quick y mergesort
         
+        
+        //https://es.stackoverflow.com/questions/26596/como-convertir-una-imagen-a-un-array-de-bytes-en-java
 
     }
 
