@@ -137,6 +137,7 @@ public class AlgorithmDesign {
         
         
         //https://es.stackoverflow.com/questions/26596/como-convertir-una-imagen-a-un-array-de-bytes-en-java
+        //https://www.tutorialspoint.com/How-to-convert-Image-to-Byte-Array-in-java
 
     }
 
