@@ -48,10 +48,10 @@ public class AlgorithmDesign {
         Scanner sc = new Scanner(System.in);
         System.out.println("1.Leer y ordenar archivo con burbuja"
                 + "\n2.Métodos de ordenamiento."
-                + "\n3.Sumar Casas"
-                + "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
-                + "\n5.Multiplicar matrices Divide y vencerás" //Segundo Corte
-        );
+                + "\n3.Sumar Casas");
+                //+ "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
+                //+ "\n5.Multiplicar matrices Divide y vencerás" //Segundo Corte
+//        );
         int x = sc.nextInt();
 
         switch (x) {
@@ -61,6 +61,11 @@ public class AlgorithmDesign {
                 
                 break;
             case 2:
+                //Taller 2
+        //Leer en un archivo posiciones donde cada valor está separado por una coma
+        //guardarlos en un array y ordenarlos por medio de bubblesort y 
+        //escribirlo ordenado en otro archivo
+        //Tambien estan los algoritmos quick y mergesort
                  Arc = new Archivos();
                 System.out.println("1.Bubble 2.Quick, 3.Merge");
                 System.out.println("Mil");
@@ -129,16 +134,12 @@ public class AlgorithmDesign {
 //        //Factorial de un numero
 //        System.out.println(R.Factorial(6));
 
-        //Taller 2
-        //Leer en un archivo posiciones donde cada valor está separado por una coma
-        //guardarlos en un array y ordenarlos por medio de bubblesort y 
-        //escribirlo ordenado en otro archivo
-        //Tambien estan los algoritmos quick y mergesort
+        
         
         
         //https://es.stackoverflow.com/questions/26596/como-convertir-una-imagen-a-un-array-de-bytes-en-java
         //https://www.tutorialspoint.com/How-to-convert-Image-to-Byte-Array-in-java
-
+        //https://foro.elhacker.net/criptografia/esteganografia_con_imagen_bmp-t470542.0.html;msg2126923
     }
 
 }
