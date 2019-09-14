@@ -46,6 +46,27 @@ public class Recursividad {
     }
  
     
+        
+
+        //Taller 2
+        //Leer en un archivo posiciones donde cada valor está separado por una coma
+        //guardarlos en un array y ordenarlos por medio de bubblesort y 
+        //escribirlo ordenado en otro archivo
+        //Tambien estan los algoritmos quick y mergesort
+        
+        
+        //https://es.stackoverflow.com/questions/26596/como-convertir-una-imagen-a-un-array-de-bytes-en-java
+        //https://www.tutorialspoint.com/How-to-convert-Image-to-Byte-Array-in-java
+        
+        //Ctrl + shift + c para comentar fast
+//        //Ejercicios Recursividad
+//        Recursividad R = new Recursividad();
+//        //Potencia
+//        System.out.println(R.Potencia(2, 10));
+//        //Fibonacci
+//        R.Fibo(0,1);
+//        //Factorial de un numero
+//        System.out.println(R.Factorial(6));
     
     
     
