@@ -18,27 +18,18 @@ public class AlgorithmDesign {
         int casas = size;
         int suma1 = 0;
         int suma2 = 0;
-        int posicion = 0;
         for (int i = 2; i < casas; i++) {
-            posicion = i;
             suma1 = 0;
             suma2 = 0;
             //i-1 diferente resultado
             //6 y 35 vs 3 y 14
-            for (int x = i - 1; x > 0; x--) {
-                suma1 += x;
-            }
+            for (int x = i - 1; x > 0; x--) { suma1 += x; }
 
-            for (int j = i + 1; j <= casas; j++) {
-                suma2 += j;
-                if (suma2 == suma1) {
-                    System.out.println("Suma:" + suma2 + ",  " + i);
-                }
-                if (suma2 > suma1) {
-                    break;
-                }
+            for (int j = i + 1; j <= casas; j++) { suma2 += j;
+                if (suma2 == suma1) { System.out.println("Suma:" + suma2 + ",  " + i); }
+                if (suma2 > suma1)  { break; }
             }
-            System.out.print(i % 10000 == 0 ? posicion + "\n" : "");
+            System.out.print(i % 10000 == 0 ? i + "\n" : "");
         }
 
     }
@@ -49,8 +40,8 @@ public class AlgorithmDesign {
         System.out.println("1.Leer y ordenar archivo con burbuja"
                 + "\n2.Métodos de ordenamiento."
                 + "\n3.Sumar Casas"
-                + "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
-                + "\n5.Multiplicar matrices Divide y vencerás" //Segundo Corte
+//                + "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
+//                + "\n5.Multiplicar matrices Divide y vencerás" //Segundo Corte
         );
         int x = sc.nextInt();
 
@@ -106,6 +97,7 @@ public class AlgorithmDesign {
                 break;
             case 3:
                 //Casas
+                    System.out.println("--Ingrese el numero de casas:");
                 int size = sc.nextInt();
                 casas(size);
                 break;
