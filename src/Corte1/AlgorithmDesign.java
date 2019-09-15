@@ -21,10 +21,11 @@ public class AlgorithmDesign {
         int sumDerecha = 0;
         String resultado="";
         for (int posicion = 2; posicion < casas; posicion++) {
-            sumIzquierda = 0;
+            sumIzquierda+=posicion-1;
             sumDerecha = 0;
-            for (int recorrerIzq = posicion - 1; recorrerIzq > 0; recorrerIzq--) { 
-                sumIzquierda += recorrerIzq; }
+//            System.out.println(sumIzquierda+" d"+sumDerecha);
+//            for (int recorrerIzq = posicion - 1; recorrerIzq > 0; recorrerIzq--) { 
+//                sumIzquierda += recorrerIzq; }
             for (int recorrerDer = posicion + 1; recorrerDer <= casas; recorrerDer++) { 
                 sumDerecha += recorrerDer;
                 if (sumDerecha == sumIzquierda) { resultado+=("Posicion:" +posicion+ ", total:" + sumDerecha+"\n"); }
@@ -38,7 +39,7 @@ public class AlgorithmDesign {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         
 //        System.out.println(
 //                + "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
@@ -46,14 +47,14 @@ public class AlgorithmDesign {
 //        );
 //        int x = sc.nextInt();
         while(true){
-        String x = JOptionPane.showInputDialog("Ingrese el método que desea utilizar:"
+        int x = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el método que desea utilizar:"
                 + "\n1.Leer y ordenar archivo con burbuja"
                        + "\n2.Métodos de ordenamiento."
                        + "\n3.Sumar Casas"
                        + "\n0.Salir"
-                        );
+                        ));
 
-        switch (Integer.parseInt(x)) {
+        switch (x) {
             case 1:
                 Archivos Arc = new Archivos();
                 Arc.ordenar("./src/Texto/cincoMil.txt", 4);
@@ -91,10 +92,8 @@ public class AlgorithmDesign {
 
                 break;
                 
-            case 3:
-                //Casas
-//                System.out.println("--Ingrese el numero de casas:");
-//                int size = sc.nextInt();
+            case 3://Casas
+
                 int size = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de casas"));
                 String Houses =casas(size);
                 JOptionPane.showMessageDialog(null,Houses);
