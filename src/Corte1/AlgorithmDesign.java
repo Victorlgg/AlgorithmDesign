@@ -15,10 +15,11 @@ import javax.swing.JOptionPane;
  */
 public class AlgorithmDesign {
 
-    public static void casas(int size) {
+    public static String casas(int size) {
         int casas = size;
         int sumIzquierda = 0;
         int sumDerecha = 0;
+        String resultado="";
         for (int posicion = 2; posicion < casas; posicion++) {
             sumIzquierda = 0;
             sumDerecha = 0;
@@ -26,11 +27,13 @@ public class AlgorithmDesign {
                 sumIzquierda += recorrerIzq; }
             for (int recorrerDer = posicion + 1; recorrerDer <= casas; recorrerDer++) { 
                 sumDerecha += recorrerDer;
-                if (sumDerecha == sumIzquierda) { System.out.println("Suma:" + sumDerecha + ",  " + posicion); }
+                if (sumDerecha == sumIzquierda) { resultado+=("Posicion:" +posicion+ ", total:" + sumDerecha+"\n"); }
                 if (sumDerecha > sumIzquierda)  { break; }
             }
-            System.out.print(posicion % 10000 == 0 ? posicion + "\n" : "");
+            System.out.print(posicion % 10000 == 0 ? posicion+" ": "");
+            System.out.print(posicion % 100000 == 0 ? posicion + "\n" : "");
         }
+        return resultado;
     }
 
     public static void main(String[] args) throws IOException {
@@ -58,6 +61,7 @@ public class AlgorithmDesign {
                 
             case 2:
                  Arc = new Archivos();
+                 String Tiempo="";
                 System.out.println("1.Bubble 2.Quick, 3.Merge");
                 
                 System.out.println("Mil");                         Arc.ordenar("./src/Texto/Mil.txt", 1);
@@ -81,20 +85,19 @@ public class AlgorithmDesign {
                 System.out.println("Cien mil");                    Arc.ordenar("./src/Texto/cienMil.txt", 1);
                 Arc.ordenar("./src/Texto/cienMil.txt", 2);         Arc.ordenar("./src/Texto/cienMil.txt", 3);
                 
-//        System.out.println("Millon");
-//        Arc.ordenar("./src/Texto/Millon.txt",1);
-//        Arc.ordenar("./src/Texto/Millon.txt",2);
-//        Arc.ordenar("./src/Texto/Millon.txt",3);
-                    //Analisis de gráficas en Latex, explicacion de los metodos
-                //Latex Overleaf v69 gmail
+//        System.out.println("Millon"); //Latex Overleaf v69 gmail
+//        Arc.ordenar("./src/Texto/Millon.txt",1); Arc.ordenar("./src/Texto/Millon.txt",2);
+//        Arc.ordenar("./src/Texto/Millon.txt",3); //Analisis de gráficas en Latex, explicacion de los metodos
+
                 break;
                 
             case 3:
                 //Casas
 //                System.out.println("--Ingrese el numero de casas:");
 //                int size = sc.nextInt();
-                String size = JOptionPane.showInputDialog("Ingrese el numero de casas");
-                casas(Integer.parseInt(size));
+                int size = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de casas"));
+                String Houses =casas(size);
+                JOptionPane.showMessageDialog(null,Houses);
                 break;
                
             case 0:
