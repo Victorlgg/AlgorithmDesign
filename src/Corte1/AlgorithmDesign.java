@@ -31,7 +31,7 @@ public class AlgorithmDesign {
                 if (sumDerecha > sumIzquierda)  { break; }
             }
             System.out.print(posicion % 10000 == 0 ? posicion+" ": "");
-            System.out.print(posicion % 100000 == 0 ? posicion + "\n" : "");
+            System.out.print(posicion % 100000 == 0 ? "\n" : "");
         }
         return resultado;
     }
