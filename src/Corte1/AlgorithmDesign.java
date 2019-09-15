@@ -7,6 +7,7 @@ package Corte1;
 
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,37 +17,45 @@ public class AlgorithmDesign {
 
     public static void casas(int size) {
         int casas = size;
-        int sIzquierda = 0;
-        int sDerecha = 0;
-        for (int i = 2; i < casas; i++) {
-            sIzquierda = 0;
-            sDerecha = 0;
-            for (int x = i - 1; x > 0; x--) { sIzquierda += x; }
-            for (int j = i + 1; j <= casas; j++) { sDerecha += j;
-                if (sDerecha == sIzquierda) { System.out.println("Suma:" + sDerecha + ",  " + i); }
-                if (sDerecha > sIzquierda)  { break; }
+        int sumIzquierda = 0;
+        int sumDerecha = 0;
+        for (int posicion = 2; posicion < casas; posicion++) {
+            sumIzquierda = 0;
+            sumDerecha = 0;
+            for (int recorrerIzq = posicion - 1; recorrerIzq > 0; recorrerIzq--) { 
+                sumIzquierda += recorrerIzq; }
+            for (int recorrerDer = posicion + 1; recorrerDer <= casas; recorrerDer++) { 
+                sumDerecha += recorrerDer;
+                if (sumDerecha == sumIzquierda) { System.out.println("Suma:" + sumDerecha + ",  " + posicion); }
+                if (sumDerecha > sumIzquierda)  { break; }
             }
-            System.out.print(i % 10000 == 0 ? i + "\n" : "");
+            System.out.print(posicion % 10000 == 0 ? posicion + "\n" : "");
         }
     }
 
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("1.Leer y ordenar archivo con burbuja"
-                + "\n2.Métodos de ordenamiento."
-                + "\n3.Sumar Casas"
+        
+//        System.out.println(
 //                + "\n4.Maximos y minimos Divide y vencerás" //Segundo corte
 //                + "\n5.Multiplicar matrices Divide y vencerás" //Segundo Corte
-        );
-        int x = sc.nextInt();
+//        );
+//        int x = sc.nextInt();
+        while(true){
+        String x = JOptionPane.showInputDialog("Ingrese el método que desea utilizar:"
+                + "\n1.Leer y ordenar archivo con burbuja"
+                       + "\n2.Métodos de ordenamiento."
+                       + "\n3.Sumar Casas"
+                       + "\n0.Salir"
+                        );
 
-        switch (x) {
+        switch (Integer.parseInt(x)) {
             case 1:
                 Archivos Arc = new Archivos();
                 Arc.ordenar("./src/Texto/cincoMil.txt", 4);
-                
                 break;
+                
             case 2:
                  Arc = new Archivos();
                 System.out.println("1.Bubble 2.Quick, 3.Merge");
@@ -79,22 +88,24 @@ public class AlgorithmDesign {
                     //Analisis de gráficas en Latex, explicacion de los metodos
                 //Latex Overleaf v69 gmail
                 break;
+                
             case 3:
                 //Casas
-                System.out.println("--Ingrese el numero de casas:");
-                int size = sc.nextInt();
-                casas(size);
+//                System.out.println("--Ingrese el numero de casas:");
+//                int size = sc.nextInt();
+                String size = JOptionPane.showInputDialog("Ingrese el numero de casas");
+                casas(Integer.parseInt(size));
                 break;
                
-            case 4:
+            case 0:
+                System.exit(0);
                 //DYV Maximo y minimo lista ordenada  -_> SEGUNDO CORTEEEAREQRA
                 break;
                 
             case 5: 
                 //DYV  Multiplicar matrices  _--->SEGUNDO CORTEEEAREQRA
                 break;
-        }
-
-    }
-
-}
+        }//end switch
+        }//end while
+        }//end main
+}//end clase
