@@ -5,7 +5,7 @@
  */
 
 
-package AlgorOrdenamiento;
+package AlgorOrdenamientoC1;
 
 /**
  *

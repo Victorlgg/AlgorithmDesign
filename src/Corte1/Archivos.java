@@ -5,7 +5,9 @@
  */
 package Corte1;
 
-import AlgorOrdenamiento.*;
+import AlgorOrdenamientoC1.QuickSort;
+import AlgorOrdenamientoC1.MergeSort;
+import AlgorOrdenamientoC1.BubbleSort;
 import java.util.ArrayList;
 //import java.util.Iterator;
 
