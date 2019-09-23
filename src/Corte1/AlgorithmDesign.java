@@ -37,8 +37,8 @@ public class AlgorithmDesign {
         return resultado;
     }
 
-    public static void main(String[] args) throws IOException {
-
+//    public static void main(String[] args) throws IOException {
+        public void mein() throws IOException {
 //        Scanner sc = new Scanner(System.in);
         
 //        System.out.println(
@@ -57,7 +57,7 @@ public class AlgorithmDesign {
         switch (x) {
             case 1:
                 Archivos Arc = new Archivos();
-                Arc.ordenar("./src/Texto/cincoMil.txt", 4);
+                Arc.ordenar("./src/TextoC1/cincoMil.txt", 4);
                 break;
                 
             case 2:
@@ -65,30 +65,30 @@ public class AlgorithmDesign {
                  String Tiempo="";
                 System.out.println("1.Bubble 2.Quick, 3.Merge");
                 
-                System.out.println("Mil");                         Arc.ordenar("./src/Texto/Mil.txt", 1);
-                Arc.ordenar("./src/Texto/Mil.txt", 2);             Arc.ordenar("./src/Texto/Mil.txt", 3);
+                System.out.println("Mil");                         Arc.ordenar("./src/TextoC1/Mil.txt", 1);
+                Arc.ordenar("./src/TextoC1/Mil.txt", 2);             Arc.ordenar("./src/TextoC1/Mil.txt", 3);
 
-                System.out.println("Cinco mil");                   Arc.ordenar("./src/Texto/cincoMil.txt", 1);
-                Arc.ordenar("./src/Texto/cincoMil.txt", 2);        Arc.ordenar("./src/Texto/cincoMil.txt", 3);
+                System.out.println("Cinco mil");                   Arc.ordenar("./src/TextoC1/cincoMil.txt", 1);
+                Arc.ordenar("./src/TextoC1/cincoMil.txt", 2);        Arc.ordenar("./src/TextoC1/cincoMil.txt", 3);
 
-                System.out.println("Diez mil");                    Arc.ordenar("./src/Texto/diezMil.txt", 1);
-                Arc.ordenar("./src/Texto/diezMil.txt", 2);         Arc.ordenar("./src/Texto/diezMil.txt", 3);
+                System.out.println("Diez mil");                    Arc.ordenar("./src/TextoC1/diezMil.txt", 1);
+                Arc.ordenar("./src/TextoC1/diezMil.txt", 2);         Arc.ordenar("./src/TextoC1/diezMil.txt", 3);
 //        
-                System.out.println("25 mil");                      Arc.ordenar("./src/Texto/ventiCincoMil.txt", 1);
-                Arc.ordenar("./src/Texto/ventiCincoMil.txt", 2);   Arc.ordenar("./src/Texto/ventiCincoMil.txt", 3);
+                System.out.println("25 mil");                      Arc.ordenar("./src/TextoC1/ventiCincoMil.txt", 1);
+                Arc.ordenar("./src/TextoC1/ventiCincoMil.txt", 2);   Arc.ordenar("./src/TextoC1/ventiCincoMil.txt", 3);
 
-                System.out.println("50 mil");                      Arc.ordenar("./src/Texto/cincuentaMil.txt", 1);
-                Arc.ordenar("./src/Texto/cincuentaMil.txt", 2);    Arc.ordenar("./src/Texto/cincuentaMil.txt", 3);
+                System.out.println("50 mil");                      Arc.ordenar("./src/TextoC1/cincuentaMil.txt", 1);
+                Arc.ordenar("./src/TextoC1/cincuentaMil.txt", 2);    Arc.ordenar("./src/TextoC1/cincuentaMil.txt", 3);
 
-                System.out.println("75 mil");                      Arc.ordenar("./src/Texto/setentaCincoMil.txt", 1);
-                Arc.ordenar("./src/Texto/setentaCincoMil.txt", 2); Arc.ordenar("./src/Texto/setentaCincoMil.txt", 3);
+                System.out.println("75 mil");                      Arc.ordenar("./src/TextoC1/setentaCincoMil.txt", 1);
+                Arc.ordenar("./src/TextoC1/setentaCincoMil.txt", 2); Arc.ordenar("./src/TextoC1/setentaCincoMil.txt", 3);
 
-                System.out.println("Cien mil");                    Arc.ordenar("./src/Texto/cienMil.txt", 1);
-                Arc.ordenar("./src/Texto/cienMil.txt", 2);         Arc.ordenar("./src/Texto/cienMil.txt", 3);
+                System.out.println("Cien mil");                    Arc.ordenar("./src/TextoC1/cienMil.txt", 1);
+                Arc.ordenar("./src/TextoC1/cienMil.txt", 2);         Arc.ordenar("./src/TextoC1/cienMil.txt", 3);
                 
 //        System.out.println("Millon"); //Latex Overleaf v69 gmail
-//        Arc.ordenar("./src/Texto/Millon.txt",1); Arc.ordenar("./src/Texto/Millon.txt",2);
-//        Arc.ordenar("./src/Texto/Millon.txt",3); //Analisis de gráficas en Latex, explicacion de los metodos
+//        Arc.ordenar("./src/TextoC1/Millon.txt",1); Arc.ordenar("./src/TextoC1/Millon.txt",2);
+//        Arc.ordenar("./src/TextoC1/Millon.txt",3); //Analisis de gráficas en Latex, explicacion de los metodos
 
                 break;
                 

@@ -66,7 +66,7 @@ public class Archivos {
 //                    }
 //                    //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
 //                }
-//                rutaNueva = new FileWriter("./src/Texto/Burbuja.txt");
+//                rutaNueva = new FileWriter("./src/TextoC1/Burbuja.txt");
 //                //rutaNueva.append(n);
 //                rutaNueva.close();
                 break;
@@ -95,7 +95,7 @@ public class Archivos {
 //                    //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
 //                }
 
-//                rutaNueva = new FileWriter("./src/Texto/Quick.txt");
+//                rutaNueva = new FileWriter("./src/TextoC1/Quick.txt");
 //                //rutaNueva.append(n);
 //                rutaNueva.close();
                 break;
@@ -122,7 +122,7 @@ public class Archivos {
 //                    }
                     //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
 //                }
-                //rutaNueva = new FileWriter("./src/Texto/Merge.txt");
+                //rutaNueva = new FileWriter("./src/TextoC1/Merge.txt");
                 //rutaNueva.append(n);
 //                rutaNueva.close();
                 break;
@@ -149,7 +149,7 @@ public class Archivos {
                     }
                     //rutaNueva.append(i!=Vector.length-1 ? Vector[i]+",": Vector[i]);                
                 }
-                rutaNueva = new FileWriter("./src/Texto/BurbujaOrdenado5.txt");
+                rutaNueva = new FileWriter("./src/TextoC1/BurbujaOrdenado5.txt");
                 rutaNueva.append(n);
                 rutaNueva.close();
                 break;
