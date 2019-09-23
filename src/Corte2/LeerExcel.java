@@ -49,9 +49,9 @@ public class LeerExcel {
                     //Se obtiene la celda en especifico y se imprime
                     cell = cellIterator.next();
                     cellTemp.add((int)cell.getNumericCellValue());
-                    System.out.print((int)cell.getNumericCellValue()+" ");
+//                    System.out.print((int)cell.getNumericCellValue()+" ");
                 }
-                System.out.println();
+//                System.out.println();
                 cellData.add(cellTemp);
             }
         } catch (Exception e) {
@@ -63,8 +63,6 @@ public class LeerExcel {
     private void agregarMatrizAdy(List cellDataList){
         int x = cellDataList.size();
         MatrizAdy = new int[x][x];
-        
-        
         for(int i=0;i<cellDataList.size();i++){
             List cellTempList = (List) cellDataList.get(i);
             for(int j=0; j<cellTempList.size();j++){
@@ -72,9 +70,9 @@ public class LeerExcel {
              MatrizAdy[i][j]=(int) cellTempList.get(j);
             //cell.getNumericCellValue(),
 //            String stringCellValue = hssfCell.toString();
-//            System.out.print(stringCellValue+" ");
+            System.out.print(MatrizAdy[i][j]>9 ? MatrizAdy[i][j]+" ":MatrizAdy[i][j]+"0 ");
             }
-//            System.out.println();
+            System.out.println();
         }
     }
     
