@@ -70,9 +70,21 @@ public class LeerExcel {
              MatrizAdy[i][j]=(int) cellTempList.get(j);
             //cell.getNumericCellValue(),
 //            String stringCellValue = hssfCell.toString();
-            System.out.print(MatrizAdy[i][j]>9 ? MatrizAdy[i][j]+" ":MatrizAdy[i][j]+"0 ");
+            System.out.print(MatrizAdy[i][j]>9 ? MatrizAdy[i][j]+" ":"0"+MatrizAdy[i][j]+" ");
+//                System.out.print( j!=cellTempList.size()-1 ? ""+MatrizAdy[i][j]+",":MatrizAdy[i][j]);
             }
             System.out.println();
+        }
+        MultiMatriz M = new MultiMatriz();
+        int Multiplicacion[][] = M.matrixMultiplicationFinal(MatrizAdy, MatrizAdy);
+        for(int i=0;i<Multiplicacion.length;i++){
+           for(int j=0;j<Multiplicacion.length;j++){
+            System.out.print(Multiplicacion[i][j]>=100 ? "["+Multiplicacion[i][j]+"]":"");
+            System.out.print(Multiplicacion[i][j]>10 && Multiplicacion[i][j]<100 ? "[0"+Multiplicacion[i][j]+"]":"");
+            System.out.print(Multiplicacion[i][j]<9? "[00"+Multiplicacion[i][j]+"]":"");
+               
+             }
+           System.out.println();
         }
     }
     
