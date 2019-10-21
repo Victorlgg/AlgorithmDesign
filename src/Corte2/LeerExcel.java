@@ -83,8 +83,8 @@ public class LeerExcel {
     for(int i=0;i<MatrizAdy.length;i++){
            for(int j=0;j<MatrizAdy.length;j++){
             
-            System.out.print(MatrizAdy[i][j]>10 && MatrizAdy[i][j]<100 ? "["+MatrizAdy[i][j]+"]":"");
-            System.out.print(MatrizAdy[i][j]<9? "[0"+MatrizAdy[i][j]+"]":"");
+            System.out.print(MatrizAdy[i][j]>=10 && MatrizAdy[i][j]<100 ? "["+MatrizAdy[i][j]+"]":"");
+            System.out.print(MatrizAdy[i][j]<10? "[0"+MatrizAdy[i][j]+"]":"");
                
              }
            System.out.println();
