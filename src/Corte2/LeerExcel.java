@@ -80,6 +80,16 @@ public class LeerExcel {
     
     public void MultiplicarMatriz(int[][] MatrizAdy){
     MultiMatriz M = new MultiMatriz();
+    for(int i=0;i<MatrizAdy.length;i++){
+           for(int j=0;j<MatrizAdy.length;j++){
+            
+            System.out.print(MatrizAdy[i][j]>10 && MatrizAdy[i][j]<100 ? "["+MatrizAdy[i][j]+"]":"");
+            System.out.print(MatrizAdy[i][j]<9? "[0"+MatrizAdy[i][j]+"]":"");
+               
+             }
+           System.out.println();
+        }
+    
         int Multiplicacion[][] = M.matrixMultiplicationFinal(MatrizAdy, MatrizAdy);
         for(int i=0;i<Multiplicacion.length;i++){
            for(int j=0;j<Multiplicacion.length;j++){
