@@ -75,7 +75,11 @@ public class LeerExcel {
             }
             System.out.println();
         }
-        MultiMatriz M = new MultiMatriz();
+        MultiplicarMatriz(MatrizAdy);
+    }
+    
+    public void MultiplicarMatriz(int[][] MatrizAdy){
+    MultiMatriz M = new MultiMatriz();
         int Multiplicacion[][] = M.matrixMultiplicationFinal(MatrizAdy, MatrizAdy);
         for(int i=0;i<Multiplicacion.length;i++){
            for(int j=0;j<Multiplicacion.length;j++){
