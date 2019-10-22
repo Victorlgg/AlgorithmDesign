@@ -32,7 +32,7 @@ public class LeerExcel {
             //Leer Excel
             XSSFWorkbook libroExcel = new XSSFWorkbook(Archivo);
             //obtener la hoja que se va leer
-            XSSFSheet hojaExcel = libroExcel.getSheetAt(2);
+            XSSFSheet hojaExcel = libroExcel.getSheetAt(0);
             //Obtener todas las filas de la hoja excel
             Iterator<Row> rowIterador = hojaExcel.iterator();
             
@@ -100,6 +100,19 @@ public class LeerExcel {
              }
            System.out.println();
         }
+            System.out.println(" -------------------------------");
+        int[][] Mcuadrada = M.multiply(MatrizAdy, MatrizAdy);
+        for(int i=0;i<Mcuadrada.length;i++){
+           for(int j=0;j<Mcuadrada.length;j++){
+            System.out.print(Mcuadrada[i][j]>=100 ? "["+Mcuadrada[i][j]+"]":"");
+            System.out.print(Mcuadrada[i][j]>10 && Mcuadrada[i][j]<100 ? "[0"+Mcuadrada[i][j]+"]":"");
+            System.out.print(Mcuadrada[i][j]<9? "[00"+Mcuadrada[i][j]+"]":"");
+               
+             }
+           System.out.println();
+        }
+        
+        
     }
     
     public static void main(String [] args){
