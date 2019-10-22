@@ -39,17 +39,17 @@ public static int[][] matrixMultiplication(
         0, 0);
 
          sumMatrix(C, 
-
+        //C12
             matrixMultiplication(A, B, rowA, colA, rowB, colB + newSize, newSize),
             matrixMultiplication(A, B, rowA, colA+newSize, rowB+ newSize, colB+newSize, newSize),
         0, newSize);
 
          sumMatrix(C, 
-
+        //C21
             matrixMultiplication(A, B, rowA+ newSize, colA, rowB, colB, newSize),
             matrixMultiplication(A, B, rowA+ newSize, colA+newSize, rowB+ newSize, colB, newSize),
         newSize, 0);
-
+        //C22
          sumMatrix(C, 
 
             matrixMultiplication(A, B, rowA+ newSize, colA, rowB, colB+newSize, newSize),

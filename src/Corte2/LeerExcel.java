@@ -32,7 +32,7 @@ public class LeerExcel {
             //Leer Excel
             XSSFWorkbook libroExcel = new XSSFWorkbook(Archivo);
             //obtener la hoja que se va leer
-            XSSFSheet hojaExcel = libroExcel.getSheetAt(0);
+            XSSFSheet hojaExcel = libroExcel.getSheetAt(2);
             //Obtener todas las filas de la hoja excel
             Iterator<Row> rowIterador = hojaExcel.iterator();
             
