@@ -7,12 +7,14 @@ package Corte2;
 
 /**
  *
- * @author Victor
+ * @author https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
  */
 public class Dijkstra {
+    int fuente;
   // A utility function to find the vertex with minimum distance value, 
     // from the set of vertices not yet included in shortest path tree 
-    static final int V = 9; 
+    static final int V = 14; 
+    //ShortestPhatThreeSet
     int minDistance(int dist[], Boolean sptSet[]) 
     { 
         // Initialize min value 
@@ -30,9 +32,9 @@ public class Dijkstra {
     // A utility function to print the constructed distance array 
     void printSolution(int dist[]) 
     { 
-        System.out.println("Vertex \t\t Distance from Source"); 
+        System.out.println("Vertice\t\t Distancia a la fuente: "+fuente); 
         for (int i = 0; i < V; i++) 
-            System.out.println(i + " \t\t " + dist[i]); 
+            System.out.println(i+1 + " \t\t " + dist[i]); 
     } 
   
     // Function that implements Dijkstra's single source shortest path 
@@ -40,6 +42,7 @@ public class Dijkstra {
     // representation 
     void dijkstra(int graph[][], int src) 
     { 
+        fuente= src+1;
         int dist[] = new int[V]; // The output array. dist[i] will hold 
         // the shortest distance from src to i 
   

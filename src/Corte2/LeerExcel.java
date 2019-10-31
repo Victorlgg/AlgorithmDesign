@@ -26,12 +26,15 @@ public class LeerExcel {
 
     static int[][] MatrizAdy;
 
+    public static int[][] getMatrizAdy() {
+        return MatrizAdy;
+    }
+
     public LeerExcel() {
     }
 
     public LeerExcel(File Ruta, int hoja) {
         List cellData = new ArrayList();
-
         try {
             FileInputStream Archivo = new FileInputStream(Ruta);
             //Leer Excel
@@ -40,7 +43,7 @@ public class LeerExcel {
             XSSFSheet hojaExcel = libroExcel.getSheetAt(hoja);
             //Obtener todas las filas de la hoja excel
             Iterator<Row> rowIterador = hojaExcel.iterator();
-
+            //Iterador para recorrer los datos
             Row row;
             //Recorrer cada Fila
             while (rowIterador.hasNext()) {
@@ -62,7 +65,6 @@ public class LeerExcel {
         } catch (Exception e) {
             e.getMessage();
         }
-
         agregarMatrizAdy(cellData);
     }
 
@@ -84,7 +86,7 @@ public class LeerExcel {
 
     }
 
-    public static void MultiplicarMatriz(int[][] MatrizAdy) {
+    public static void MultiplicarMatriz(int[][] Matriz1, int[][] Matriz2) {
         MultiMatriz M = new MultiMatriz();
 //    for(int i=0;i<MatrizAdy.length;i++){
 //           for(int j=0;j<MatrizAdy.length;j++){
@@ -95,7 +97,7 @@ public class LeerExcel {
 //             }
 //           System.out.println();
 //        }
-        int Multiplicacion[][] = M.matrixMultiplicationFinal(MatrizAdy, MatrizAdy);
+        int Multiplicacion[][] = M.matrixMultiplicationFinal(Matriz1, Matriz2);
         for (int i = 0; i < Multiplicacion.length; i++) {
             for (int j = 0; j < Multiplicacion.length; j++) {
                 System.out.print(Multiplicacion[i][j] >= 100 ? "[" + Multiplicacion[i][j] + "]" : "");
@@ -123,20 +125,36 @@ public class LeerExcel {
     public static void main(String[] args) {
         File f = new File("./src/ArchivosC2/MatrizGrafo.xlsx");
         if (f.exists()) {
-            System.out.println("0.Matriz Adyacencia, 1.Matriz Multiplicar");
+            System.out.println("0.Matriz Adyacencia(Dijsktra), 1.Multiplicar Matrices 2.Mochila 3.salir");
             Scanner sc = new Scanner(System.in);
             int x = sc.nextInt();
-            LeerExcel obj2 = new LeerExcel();
-            LeerExcel obj = new LeerExcel(f, x);
+//            LeerExcel obj2 = new LeerExcel();
+            
 
             switch (x) {
                 case 0:
+                    LeerExcel obj = new LeerExcel(f, x);
                     Dijkstra D = new Dijkstra();
-                    D.dijkstra(MatrizAdy, 0);
+                    D.dijkstra(MatrizAdy, 13);
+                    //Matriz y fuente
+                    //Agregar Destino
                     break;
                 case 1:
-                    MultiplicarMatriz(MatrizAdy);
+                    LeerExcel M1 = new LeerExcel(f, 1);
+                    System.out.println("--------------");
+                    LeerExcel M2 = new LeerExcel(f, 2);
+//                    M1.getMatrizAdy();
+                    MultiplicarMatriz(M1.getMatrizAdy(),M2.getMatrizAdy());
+                    System.out.println("--------------");
                     MultiplicarMatrizCuadrada(MatrizAdy);
+                    //Entenderla Bien
+                    //Hacer que pueda ser por excel o escrita
+                    break;
+                case 2: //mochila
+                    //Implementar
+                    break;
+                case 3:
+                    System.exit(0);
                     break;
 
             }
