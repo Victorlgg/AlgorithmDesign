@@ -5,8 +5,12 @@
  */
 package Corte2;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,9 +23,9 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- *
+ *  https://github.com/dandev237/mochila-continua/blob/master/Objeto.java
  * @author Victor
- */
+ */  
 public class LeerExcel {
 
     static int[][] MatrizAdy;
@@ -78,10 +82,10 @@ public class LeerExcel {
                 MatrizAdy[i][j] = (int) cellTempList.get(j);
                 //cell.getNumericCellValue(),
 //            String stringCellValue = hssfCell.toString();
-                System.out.print(MatrizAdy[i][j] > 9 ? MatrizAdy[i][j] + " " : "0" + MatrizAdy[i][j] + " ");
+//                System.out.print(MatrizAdy[i][j] > 9 ? MatrizAdy[i][j] + " " : "0" + MatrizAdy[i][j] + " ");
 //                System.out.print( j!=cellTempList.size()-1 ? ""+MatrizAdy[i][j]+",":MatrizAdy[i][j]);
             }
-            System.out.println();
+//            System.out.println();
         }
 
     }
@@ -122,7 +126,25 @@ public class LeerExcel {
 
     }
 
-    public static void main(String[] args) {
+    public double[] leerTxt(String dirArchivo) throws FileNotFoundException, IOException{
+    FileReader lector = new FileReader(dirArchivo);
+        BufferedReader datos = new BufferedReader(lector);
+        String cadena = datos.readLine();
+        datos.close();
+        lector.close();
+        
+        String n = "";
+        String Vectorr[] = cadena.split(", ", -2);
+        double[] B = new double[Vectorr.length];
+                int s = 0;
+                for (String valor : Vectorr) {
+                    B[s] = Double.parseDouble(valor);
+                    s++;
+                }
+                return B;
+    }
+    
+    public static void main(String[] args) throws IOException {
         File f = new File("./src/ArchivosC2/MatrizGrafo.xlsx");
         if (f.exists()) {
             System.out.println("0.Matriz Adyacencia(Dijsktra), 1.Multiplicar Matrices 2.Mochila 3.salir");
@@ -152,6 +174,25 @@ public class LeerExcel {
                     break;
                 case 2: //mochila
                     //Implementar
+                    LeerExcel objmoc = new LeerExcel(f, x);
+                    double[] peso= objmoc.leerTxt("./src/ArchivosC2/peso2.txt");
+                    double[] beneficio= objmoc.leerTxt("./src/ArchivosC2/beneficio2.txt");
+                    int tamano =14;
+                    //nuevo objeto con numero de objetos
+                    
+//                    for(int valor: peso){
+//                    System.out.println(valor);
+//                    }
+                    
+                    double Solucion[]={0,0,0};
+                    Mochila M = new Mochila();
+//                    double Mochila[][]= M.Mochila(peso, beneficio,tamano );
+//                    for(int i=0;i<Mochila.length;i++){
+//                        System.out.println();
+//                        for(int j=0;j<Mochila.length;j++)
+//                            System.out.print(Mochila[i][j]);
+//                    }
+                    M.LlenarMochila(tamano, peso, beneficio, Solucion);
                     break;
                 case 3:
                     System.exit(0);

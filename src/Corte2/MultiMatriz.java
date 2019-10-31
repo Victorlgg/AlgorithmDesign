@@ -20,7 +20,6 @@ public static int[][] matrixMultiplicationFinal(int[][] A, int[][] B){
 
 }
 
-
 public static int[][] matrixMultiplication(
         int[][] A, int[][] B, int rowA, int colA, 
         int rowB, int colB, int size){
@@ -75,11 +74,11 @@ private static void sumMatrix(int[][] C, int[][]A, int[][]B,int rowC, int colC){
 
 /*_-------------------------------------------------______________________________________________________________----*/
 
-static int[][] multiply(int[][] matrix1, int[][] matrix2) {
-		int size = matrix1.length;
+static int[][] multiply(int[][] matriz1, int[][] matriz2) {
+		int size = matriz1.length;
 		int[][] product = new int[size][size];
 		if (size == 1) {
-			product[0][0] = matrix1[0][0] * matrix2[0][0];
+			product[0][0] = matriz1[0][0] * matriz2[0][0];
 		} else if (size % 2 == 0) {
 			int [][] a = new int[size/2][size/2];
 			int [][] b = new int[size/2][size/2];
@@ -92,17 +91,17 @@ static int[][] multiply(int[][] matrix1, int[][] matrix2) {
 			for (int i = 0; i < size; i++) {
 				for (int j = 0; j < size; j++) {
 					if (i < size / 2 & j < size / 2) {
-						a[i][j] = matrix1[i][j];
-						e[i][j] = matrix2[i][j];
+						a[i][j] = matriz1[i][j];
+						e[i][j] = matriz2[i][j];
 					} else if (i < size / 2 && j >= size / 2) {
-						b[i][j - size/2] = matrix1[i][j];
-						f[i][j - size/2] = matrix2[i][j];
+						b[i][j - size/2] = matriz1[i][j];
+						f[i][j - size/2] = matriz2[i][j];
 					} else if (i >= size / 2 && j < size / 2) {
-						c[i - size/2][j] = matrix1[i][j];
-						g[i - size/2][j] = matrix2[i][j];
+						c[i - size/2][j] = matriz1[i][j];
+						g[i - size/2][j] = matriz2[i][j];
 					} else {
-						d[i - size/2][j - size/2] = matrix1[i][j];
-						h[i - size/2][j - size/2] = matrix2[i][j];
+						d[i - size/2][j - size/2] = matriz1[i][j];
+						h[i - size/2][j - size/2] = matriz2[i][j];
 					}
 				}
 			}
@@ -130,8 +129,8 @@ static int[][] multiply(int[][] matrix1, int[][] matrix2) {
 			int[][] copy2 = new int[size + 1][size + 2];
 			for (int i = 0; i < size; i++) {
 				for (int j = 0; j < size; j++) {
-					copy1[i][j] = matrix1[i][j];
-					copy2[i][j] = matrix2[i][j];
+					copy1[i][j] = matriz1[i][j];
+					copy2[i][j] = matriz2[i][j];
 				}
 			}
 			int[][] copy3 = multiply(copy1, copy2);
