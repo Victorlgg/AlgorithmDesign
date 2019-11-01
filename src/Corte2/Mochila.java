@@ -55,12 +55,15 @@ public class Mochila {
             i++;
         }
         int a = 0;
+        double beneficioTotal=0;
         for (double valor : x) {
             System.out.print(valor + " ");
-            System.out.print("(" + valor * beneficio[a] + "," + valor * peso[a] + ") ");
+            System.out.print("(" + valor * peso[a]  + "," +valor * beneficio[a] + ") ");
 //    System.out.print(valor*peso[a]+" ");
+        beneficioTotal+=valor * beneficio[a];
             a++;
         }
+       System.out.println("Beneficio: "+beneficioTotal);
     }
-
+    
 }

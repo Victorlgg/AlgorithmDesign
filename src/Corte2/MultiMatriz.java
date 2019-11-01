@@ -35,14 +35,14 @@ public static int[][] matrixMultiplication(
         //C11
          sumMatrix(C, 
 
-            matrixMultiplication(A, B, rowA, colA, rowB, colB, newSize),
-            matrixMultiplication(A, B, rowA, colA+newSize, rowB+ newSize, colB, newSize),
+            matrixMultiplication(A, B, rowA, colA, rowB, colB, newSize),//A*E +
+            matrixMultiplication(A, B, rowA, colA+newSize, rowB+ newSize, colB, newSize),//B*G
         0, 0);
 
          sumMatrix(C, 
         //C12
-            matrixMultiplication(A, B, rowA, colA, rowB, colB + newSize, newSize),
-            matrixMultiplication(A, B, rowA, colA+newSize, rowB+ newSize, colB+newSize, newSize),
+            matrixMultiplication(A, B, rowA, colA, rowB, colB + newSize, newSize),//A*F
+            matrixMultiplication(A, B, rowA, colA+newSize, rowB+ newSize, colB+newSize, newSize),//B*H
         0, newSize);
 
          sumMatrix(C, 
@@ -105,17 +105,17 @@ static int[][] multiply(int[][] matriz1, int[][] matriz2) {
 					}
 				}
 			}
-			int[][] p1 = multiply(a, minus(f, h));
-			int[][] p2 = multiply(add(a, b), h);
-			int[][] p3 = multiply(add(c, d), e);
-			int[][] p4 = multiply(d, minus(g, e));
-			int[][] p5 = multiply(add(a, d), add(e, h));
-			int[][] p6 = multiply(minus(b, d), add(g, h));
-			int[][] p7 = multiply(minus(a, c), add(e, f));
-			int[][] c1 = add(minus(add(p5, p4), p2), p6);
-			int[][] c2 = add(p1, p2);
-			int[][] c3 = add(p3, p4);
-			int[][] c4 = minus(add(p1, p5), add(p3, p7));
+			int[][] p1 = multiply(a, minus(f, h));//A(F-H)
+			int[][] p2 = multiply(add(a, b), h);//(A+B)H
+			int[][] p3 = multiply(add(c, d), e);//(C+D)E
+			int[][] p4 = multiply(d, minus(g, e));//D(G-E)
+			int[][] p5 = multiply(add(a, d), add(e, h));//(a+d)(e+h)
+			int[][] p6 = multiply(minus(b, d), add(g, h));//(b-d)(g-h)
+			int[][] p7 = multiply(minus(a, c), add(e, f));//(a-c)(e+f)
+			int[][] c1 = add(minus(add(p5, p4), p2), p6);//P5+P4-P2+P26
+			int[][] c2 = add(p1, p2);//P1+P2
+			int[][] c3 = add(p3, p4);//P3+P4
+			int[][] c4 = minus(add(p1, p5), add(p3, p7));//(P1+P5)-(P3+P7)
 			for (int i = 0; i < size/2; i++) {
 				for (int j = 0; j < size/2; j++) {
 					product[i][j] = c1[i][j];
@@ -175,24 +175,58 @@ static int[][] multiply(int[][] matriz1, int[][] matriz2) {
     		System.out.println();
     	}
 	}
-	
-    public static void main(String[] args) throws FileNotFoundException {
-    	int[][] first = {
-    			{1, 1, 1},
-    			{1, 1, 1},
-    			{1, 1, 1}
-    	};
-    	int[][] second = {
-    			{1, 2, 3, 4, 5},
-    			{1, 1, 1, 1, 1},
-    			{1, 1, 1, 1, 1},
-    			{5, 4, 3, 2, 1},
-    			{1, 1, 1, 1, 1}
-    	};
-    	int[][] test1 = multiply(first, first);
-    	print(test1);
-    	print(multiply(second, second));
-    }
+        
+}
+//  `[P4+P4*P2+P6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    public static void main(String[] args) throws FileNotFoundException {
+//    	int[][] first = {
+//    			{1, 1, 1},
+//    			{1, 1, 1},
+//    			{1, 1, 1}
+//    	};
+//    	int[][] second = {
+//    			{1, 2, 3, 4, 5},
+//    			{1, 1, 1, 1, 1},
+//    			{1, 1, 1, 1, 1},
+//    			{5, 4, 3, 2, 1},
+//    			{1, 1, 1, 1, 1}
+//    	};
+//    	int[][] test1 = multiply(first, first);
+//    	print(test1);
+//    	print(multiply(second, second));
+//    }
 
 //    public int[][] calc(int[][] a, int[][] b) {
 //
@@ -230,4 +264,4 @@ static int[][] multiply(int[][] matriz1, int[][] matriz2) {
 //  
 //}
     
-}
+//}

@@ -157,7 +157,9 @@ public class LeerExcel {
                 case 0:
                     LeerExcel obj = new LeerExcel(f, x);
                     Dijkstra D = new Dijkstra();
-                    D.dijkstra(MatrizAdy, 13);
+                    System.out.println("Ingrese el punto de origen.");
+                    int origen = sc.nextInt();
+                    D.dijkstra(MatrizAdy, origen);
                     //Matriz y fuente
                     //Agregar Destino
                     break;
@@ -175,16 +177,23 @@ public class LeerExcel {
                 case 2: //mochila
                     //Implementar
                     LeerExcel objmoc = new LeerExcel(f, x);
-                    double[] peso= objmoc.leerTxt("./src/ArchivosC2/peso2.txt");
-                    double[] beneficio= objmoc.leerTxt("./src/ArchivosC2/beneficio2.txt");
-                    int tamano =14;
+                    double[] peso= objmoc.leerTxt("./src/ArchivosC2/peso.txt");
+                    double[] beneficio= objmoc.leerTxt("./src/ArchivosC2/beneficio.txt");
+                    int tamano =20;
+                    
+//                    double[][]Objetos=objmoc.Burbuja(peso, beneficio);
+//                    for(int i=0;i<Objetos.length;i++){                    
+//                        System.out.println(Objetos[i][0]+""+Objetos[i][1]);
+//                    }
+                    
+                    
                     //nuevo objeto con numero de objetos
                     
 //                    for(int valor: peso){
 //                    System.out.println(valor);
 //                    }
                     
-                    double Solucion[]={0,0,0};
+                    double Solucion[]={0,0,0};//Cantidad de elementos
                     Mochila M = new Mochila();
 //                    double Mochila[][]= M.Mochila(peso, beneficio,tamano );
 //                    for(int i=0;i<Mochila.length;i++){
@@ -192,6 +201,19 @@ public class LeerExcel {
 //                        for(int j=0;j<Mochila.length;j++)
 //                            System.out.print(Mochila[i][j]);
 //                    }
+                    M.LlenarMochila(tamano, peso, beneficio, Solucion);
+                    for(int i=0,j=peso.length-1;i<peso.length && j>=0;i++,j--){
+                        
+                            double auxP= peso[i];
+                            double auxB =beneficio[i];
+                            peso[i]=peso[j];
+                            beneficio[i]=beneficio[j];
+                            peso[j]=auxP;
+                            beneficio[j]=auxB;
+                        if(i==j){
+                        break;
+                        }
+                    }
                     M.LlenarMochila(tamano, peso, beneficio, Solucion);
                     break;
                 case 3:
@@ -202,4 +224,28 @@ public class LeerExcel {
 
         }
     }
+    
+    
+    public double[][] Burbuja(double[] Vector, double [] beneficio) {
+        
+           double Objeto[][]= new double[Vector.length][2];
+        for (int i = 0; i < Vector.length; i++) {
+            for (int j = 0; j < Vector.length - 1; j++) {
+                if ( Vector[j] > Vector[j + 1]) {
+                    double aux = Vector[j];
+                    Vector[j] = Vector[j + 1];
+                    Vector[j + 1] = aux;
+                          
+                    Objeto[j][0]=Vector[j+1];
+                    Objeto[j+1][0]=aux;
+                    double auxx=beneficio[j];
+                    Objeto[j][1]=beneficio[j+1];
+                    Objeto[j+1][1]=auxx;
+                }
+            }
+        }
+        return Objeto;
+    }
+    
+    
 }
