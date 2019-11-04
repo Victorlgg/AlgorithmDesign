@@ -163,7 +163,8 @@ public class PrincipalC2 {
                     break;
                 case 2: //mochila
 //                    MochilaC mochila = new MochilaC();
-                    double PesoMax = Double.parseDouble(JOptionPane.showInputDialog("¿Peso maximo de la mochila?"));
+                    System.out.println("Ingrese el peso maximo");
+                    double PesoMax = sc.nextDouble();//Double.parseDouble(JOptionPane.showInputDialog("¿Peso maximo de la mochila?"));
                     MochilaC.mein(PesoMax);
                     break;
                 case 3:

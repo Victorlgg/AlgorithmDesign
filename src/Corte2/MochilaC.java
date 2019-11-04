@@ -92,7 +92,7 @@ public class MochilaC {
             }
         }
 
-        System.out.println("El valor maximo obtenido es: " +m.valorTotal());
+        System.out.println("El beneficio maximo obtenido es: " +m.valorTotal());
         System.out.println("y el vector solución es: ");
         for(i=0;i<m.solucion.length;i++){
         System.out.print("["+m.solucion[i]+"]");
