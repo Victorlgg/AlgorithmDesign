@@ -8,12 +8,13 @@ package Corte2;
 /**
  *
  * @author https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+ * AlgorithmNotesForProfessionals
  */
 public class Dijkstra {
     int fuente;
   // A utility function to find the vertex with minimum distance value, 
     // from the set of vertices not yet included in shortest path tree 
-    static final int V = 14; 
+    static final int V = 14; //Numero de nodos
     //ShortestPhatThreeSet
     int minDistance(int distancia[], Boolean sptSet[]) 
     { 
