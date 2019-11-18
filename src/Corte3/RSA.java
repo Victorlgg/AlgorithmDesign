@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author Guia de Del Alex Narvaez Programming
  */
 public class RSA {
-
+    static String letras[] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     static private BigInteger phi_n, d, e, n, p, q;
 
     BigInteger encriptar(String mensaje) throws IOException {
